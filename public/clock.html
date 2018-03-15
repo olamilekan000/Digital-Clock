@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Clock</title>
+</head>
+<body>
+<script> 
+
+	function displayTime() {
+		var elt = document.getElementById("clock"); 
+			var now = new Date();
+			elt.innerHTML = now.toLocaleTimeString(); 
+			setTimeout(displayTime, 1000);
+	}
+	window.onload = displayTime;
+</script>
+<style> 
+	#clock { 
+		font: bold 80px sans; 
+		background: #ddf; 
+		padding: 10px; 
+		border: solid black 2px; 
+		border-radius: 10px;
+		color: black;
+	}
+	#wrapper{
+        position: fixed;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+	}
+	body{
+		margin: 0px;
+		padding: 0px;
+		background-color: black;
+		color: #fff;
+		font-family: helvetica;
+	}
+	h1{
+		font-size: 50px;
+		margin-left: 70px; 
+	}
+
+</style>
+</head>
+<body> 
+<div id="wrapper"><!-- The body is the displayed parts of the doc. -->
+	<h1>Digital Clock</h1> <!-- Display a title -->
+	<span id="clock"></span> 
+</div><!-- The time gets inserted here -->
+
+</body>
+</html>
